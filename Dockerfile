@@ -4,6 +4,4 @@ WORKDIR /app
 COPY . /app
 RUN ["chmod", "+x", "run.sh"]
 RUN pip install --upgrade pip
-RUN pip install Django
-RUN pip install -r requirements.txt
 CMD ["sh", "run.sh"]

@@ -1,4 +1,4 @@
-# Demands CRUD #
+# Demands Automotive Parts #
 
 ## Objectives ##
 
@@ -18,7 +18,7 @@ https://docs.docker.com/compose/install/#install-compose
 
 #### Setting Up Database Connection ####
 
-If needed, open `src/main/resources/application-dev.properties` and change environment variables.
+If needed, open `demandsProject/settings.py` and change environment variables.
 
 #### Composing up! ####
 
@@ -27,10 +27,6 @@ In your application directory, run:
 ```bash
 docker-compose up -d
 ```
-
-Unfortunatelly, you'll need to run this command every time you make a change, so Java can compile and docker can recreate Tomcat's service :(
-
-So, don't forget to compose down, compose up every time you make changes!
 
 #### Composing down :( ####
 

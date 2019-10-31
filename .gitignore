@@ -3,3 +3,4 @@ db.sqlite3
 venv/
 demandsProject/__pycache__/
 app_models/migrations/
+app_models/__pycache__/

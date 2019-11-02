@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app.apps.AppModelsConfig',
-    'rest_framework',
+    'app_models'
 ]
 
 MIDDLEWARE = [
@@ -83,10 +82,7 @@ DATABASES = {
         'PASSWORD': 'root',
         'HOST': 'mysql_django',
         'PORT': '3306',
-    },
-    'OPTIONS': {
-            'sql_mode': 'STRICT_ALL_TABLES',
-        }
+    }
 }
 
 

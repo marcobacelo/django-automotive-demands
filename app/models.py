@@ -1,38 +1,29 @@
 from django.db import models
-
-
-class Contact(models.Model):
-    email = models.EmailField(max_length=75, primary_key=True)
-    address = models.CharField(max_length=100)
-    celNumber = models.CharField(max_length=20)
-
-    class Meta:
-        db_table = 'contact'
-
-
-class Profile(models.Model):
-    profileName = models.CharField(max_length=10, primary_key=True)
-
-    class Meta:
-        db_table = 'profile'
+from django.contrib.auth.models import User
 
 
 class Demands(models.Model):
     id = models.AutoField(primary_key=True)
-    description = models.TextField(max_length=500)
-    receiver = models.CharField(max_length=15)
-    status = models.BooleanField(default=True, verbose_name='status')
+    description = models.TextField(max_length=500, verbose_name='Descrição')
+    destiny = models.CharField(max_length=50, verbose_name='Destinatário')
+    status = models.BooleanField(default=True, verbose_name='Status')
+    personalContact = models.ManyToManyField('UserDetails', verbose_name='Contato associado')
+
+    def __str__(self):
+        return self.description
 
     class Meta:
         db_table = 'demands'
 
 
-class Person(models.Model):
-    cpf = models.CharField(max_length=15, primary_key=True)
-    name = models.CharField(max_length=100, db_column='name')
-    profile = models.ForeignKey('Profile', to_field="profileName", on_delete=models.CASCADE)
-    contact = models.OneToOneField('Contact', to_field='email', on_delete=models.CASCADE)
-    demands = models.ManyToManyField(Demands, db_column='idDemands')
+class UserDetails(models.Model):
+    cpf = models.CharField(max_length=15, primary_key=True, verbose_name='CPF')
+    name = models.CharField(max_length=100, db_column='name', verbose_name='Nome')
+    cellphone = models.CharField(max_length=20, verbose_name='Celular')
+    userId = models.OneToOneField(User, unique=True, on_delete=models.CASCADE, verbose_name='Anunciantes')
+
+    def __str__(self):
+        return self.name
 
     class Meta:
-        db_table = 'person'
+        db_table = 'user_details'

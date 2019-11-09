@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "f7013e6c-9823-44b3-993c-3e48d266b0c9",
+		"name": "finxi-django",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://<host>:<port>/user/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"9g81^W3Yl1YmJQKH1gQi\",\n    \"last_login\": null,\n    \"is_superuser\": true,\n    \"username\": \"user\",\n    \"first_name\": \"troia\",\n    \"last_name\": \"unknow\",\n    \"email\": \"troia@unknow.com\",\n    \"is_staff\": true,\n    \"is_active\": true,\n    \"date_joined\": \"2012-09-04 06:00:00.000000\",\n    \"groups\": [],\n    \"user_permissions\": [\n        29,\n        30,\n        31,\n        32\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:32800/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32800",
+					"path": [
+						"user",
+						""
+					]
+				},
+				"description": "This url call a method POST of Demands Service"
+			},
+			"response": []
+		},
+		{
+			"name": "http://<host>:<port>/user/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:32800/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32800",
+					"path": [
+						"user",
+						""
+					]
+				},
+				"description": "This url call a method GET of Demands Service"
+			},
+			"response": []
+		},
+		{
+			"name": "http://<demands>:<port>/demands/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"NADA\",\n    \"destiny\": \"UNKNOW\",\n    \"status\": false,\n    \"personalContact\": [\"999.999.999-99\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:32800/demands/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32800",
+					"path": [
+						"demands",
+						""
+					]
+				},
+				"description": "This url call a method POST of Demands Service"
+			},
+			"response": []
+		},
+		{
+			"name": "http://<host>:<port>/demands/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:32800/demands/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32800",
+					"path": [
+						"demands",
+						""
+					]
+				},
+				"description": "This url call a method GET of Demands Service"
+			},
+			"response": []
+		},
+		{
+			"name": "http://<host>:<port>/user_detail/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"cpf\": \"999.999.999-99\",\n        \"name\": \"Ninguém\",\n        \"cellphone\": \"283128321\",\n        \"userId\": 2\n    }\n]"
+				},
+				"url": {
+					"raw": "http://localhost:32800/user_detail/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32800",
+					"path": [
+						"user_detail",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "This url call a method POST of Demands Service"
+			},
+			"response": []
+		},
+		{
+			"name": "http://<host>:<port>/user_detail/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:32800/user_detail/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32800",
+					"path": [
+						"user_detail",
+						""
+					]
+				},
+				"description": "This url call a method GET of Demands Service"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

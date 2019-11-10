@@ -25,6 +25,8 @@ If needed, open `demandsProject/settings.py` and change environment variables.
 The endpoints can be tested with a Collection of Postman inside the project,
 search for: `finxi-django.postman_collection.json`
 
+##### If you will test the endpoints, primary create an `User`,
+ after that, associate an `User Detail` to an `User` and finishing create a `Demand`
 
 #### Composing up! ####
 

@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'demandsProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'office_django',
+        'NAME': 'office_database',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST': 'mysql_django',
+        'HOST': 'office_database',
         'PORT': '3306',
     }
 }

@@ -1,26 +1,21 @@
-version: '2.1'
+version: '3.7'
 
 services:
-  django:
+  office:
     build: .
-    container_name: 'django'
+    container_name: 'office'
     volumes:
       - .:/app
     ports:
       - "32800:8000"
     depends_on:
-      mysql_django:
-        condition: service_healthy
+      - office_database
 
-  mysql_django:
-    image: mysql:5.6.40
-    container_name: 'mysql_django'
+  office_database:
+    image: mysql:5.7
+    container_name: 'office_database'
     ports:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: office_django
-    healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
-      timeout: 3s
-      retries: 10
+      MYSQL_DATABASE: office_database

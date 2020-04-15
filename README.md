@@ -1,4 +1,4 @@
-# Demands Automotive Parts #
+# Automotive parts demands #
 
 ## Objectives ##
 
@@ -15,10 +15,6 @@
 #### Download and install docker-compose ####
 
 https://docs.docker.com/compose/install/#install-compose
-
-#### Setting Up Database Connection ####
-
-If needed, open `demandsProject/settings.py` and change environment variables.
 
 ### Test the endpoints
 
@@ -42,4 +38,21 @@ To shut down the application, enter your application directory and run:
 
 ```bash
 docker-compose down
+```
+
+### Commands
+
+Any command that you would like to execute of Django, please execute inside of docker container, example:
+
+```bash
+docker-compose exec <container_name> <command>
+```
+
+## Existing users
+
+There is a user already created, follow:
+
+```
+Username: root
+Password: root
 ```
